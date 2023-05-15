@@ -12,8 +12,9 @@ export default {
 
 <style scoped>
 #navbar {
-  border: 1px solid black;
-  background-color: red;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(130, 183, 204);
   color: white;
+  text-align: center;
 }
 </style>
