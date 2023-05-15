@@ -1,17 +1,20 @@
 <template>
   <div>
     <div>
-      <button @click="buttonFooter">{{ MsgButton }}</button>
+      <button @click="buttonFooter(), secondEvent(txt)">{{ MsgButton }} -  {{ txt }}</button>
     </div>
     <p id="footer" v-show="showFooter">
       &copy; &amp; <span> {{ user }} </span> 2023. Todos os direitos reservados.
       Me encontre no <a v-bind:href="GitHub" target="_blank">GitHub</a>
     </p>
   </div>
+  <reusable/>
 </template>
 
 <script>
+import Reusable from './Reusable.vue';
 export default {
+  components: { Reusable },
   name: "Footer",
   data() {
     return {
@@ -19,6 +22,7 @@ export default {
       showFooter: true,
       MsgButton: "Mostrar Footer",
       showName: false,
+      txt: '',
       GitHub: "https://github.com/italo-vinicius",
     };
   },
@@ -31,6 +35,9 @@ export default {
         this.MsgButton = "Esconder footer";
       }
     },
+    secondEvent() {
+        this.txt = 'clicastes???'
+    }
   },
 };
 </script>

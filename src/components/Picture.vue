@@ -2,15 +2,24 @@
   <div id="picture">
     <img :src="picture" alt="avatar foda" />
   </div>
+  <ChangeImage @change-image="changeImage" />
 </template>
 
 <script>
+import ChangeImage from "./ChangeImage.vue";
 export default {
   name: "Picture",
+  components: { ChangeImage },
   data() {
     return {
       picture: "/img/avatar.jpg",
     };
+  },
+  methods: {
+    changeImage() {
+      console.log('aaaa')
+      this.picture = "/img/avatar2.jpg";
+    },
   },
 };
 </script>

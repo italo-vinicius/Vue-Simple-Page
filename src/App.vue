@@ -1,16 +1,17 @@
 <template>
   <header>
     <NavBar />
+    <Reusable />
     <Picture />
   </header>
   <section>
     <main>
       <Users />
+      <Main :showText=true :testVar="testVar" />
       <Main />
+      <Main /> 
       <Main />
-      <Main />
-      <Main />
-      <Form/>
+      <Form />
     </main>
   </section>
   <footer>
@@ -25,6 +26,7 @@ import Picture from "./components/Picture.vue";
 import Main from "./components/Main.vue";
 import Footer from "./components/Footer.vue";
 import Form from "./components/Form.vue";
+import Reusable from "./components/Reusable.vue";
 export default {
   name: "App",
   components: {
@@ -34,6 +36,12 @@ export default {
     Picture,
     Users,
     Form,
+    Reusable,
   },
+  data(){
+    return {
+    testVar: 'Teste'
+     } 
+     }
 };
 </script>
